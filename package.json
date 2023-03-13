@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "npx playwright test"
+    "test": "npx playwright test  --reporter=list",
+    "coverage": "nyc npm run test"
   },
   "dependencies": {
     "react": "^18.2.0",
