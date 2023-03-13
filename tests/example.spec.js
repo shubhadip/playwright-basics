@@ -30,7 +30,7 @@ test.describe("user interaction test cases", () => {
 
     test("cancel button clicked", async ({page}) => {
         await page.getByTestId("start-add-task-button").click()
-				// await page.locator("[data-cy='start-add-task-button']").click()
+		// await page.locator("[data-cy='start-add-task-button']").click()
         const locator = page.locator('#cancel-btn');
         await locator.click()
         
