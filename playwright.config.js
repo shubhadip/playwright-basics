@@ -86,8 +86,12 @@ module.exports = defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npm run dev',
+    command: 'VITE_COVERAGE=true npx nyc npm run start',
     port: 5173,
+    reuseExistingServer: true,
+    env: {
+      USE_BABEL_PLUGIN_ISTANBUL: '1',
+    },
   },
 });
 

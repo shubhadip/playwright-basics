@@ -1,9 +1,4 @@
 module.exports = {
-	"all": true,
-	"include": [
-		"src/**/*.(js|jsx)"
-	],
-	"exclude": [
-		"**/*.spec.(js|jsx)"
-	]
-}
+	exclude:[".next"],
+	reporter: ["html", "text", "lcov"],
+};

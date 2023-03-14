@@ -2,11 +2,12 @@
   "name": "playwright-basics",
   "version": "0.0.0",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "test": "npx playwright test",
-    "coverage": "nyc npm run test",
+    "coverage": "nyc --extension jsx npm run test",
     "report": "npx playwright test --reporter=list",
     "showreport": "npx playwright show-report"
   },
@@ -21,7 +22,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "babel-plugin-istanbul": "^6.1.1",
     "nyc": "^15.1.0",
-    "undefined": "^0.1.0",
+    "playwright-test-coverage": "^1.2.9",
     "vite": "^4.1.0"
   }
 }

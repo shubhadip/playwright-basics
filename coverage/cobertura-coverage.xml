@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage lines-valid="43" lines-covered="2" line-rate="0.04650000000000001" branches-valid="18" branches-covered="2" branch-rate="0.11109999999999999" timestamp="1678762809977" complexity="0" version="0.1">
+  <sources>
+    <source>/Users/shubhadipmaity/playwright-course/01 Starting Project 2</source>
+  </sources>
+  <packages>
+    <package name="01 Starting Project 2" line-rate="1" branch-rate="0.5">
+      <classes>
+        <class name="playwright.config.js" filename="playwright.config.js" line-rate="1" branch-rate="0.5">
+          <methods>
+          </methods>
+          <lines>
+            <line number="2" hits="5" branch="false"/>
+            <line number="13" hits="5" branch="false"/>
+          </lines>
+        </class>
+        <class name="vite.config.js" filename="vite.config.js" line-rate="1" branch-rate="1">
+          <methods>
+          </methods>
+          <lines>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="01 Starting Project 2.src" line-rate="0" branch-rate="0">
+      <classes>
+        <class name="App.jsx" filename="src/App.jsx" line-rate="0" branch-rate="0">
+          <methods>
+            <method name="App" hits="0" signature="()V">
+              <lines>
+                <line number="9" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_1)" hits="0" signature="()V">
+              <lines>
+                <line number="14" hits="0"/>
+              </lines>
+            </method>
+            <method name="startAddTaskHandler" hits="0" signature="()V">
+              <lines>
+                <line number="21" hits="0"/>
+              </lines>
+            </method>
+            <method name="cancelAddTaskHandler" hits="0" signature="()V">
+              <lines>
+                <line number="25" hits="0"/>
+              </lines>
+            </method>
+            <method name="addTaskHandler" hits="0" signature="()V">
+              <lines>
+                <line number="29" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_5)" hits="0" signature="()V">
+              <lines>
+                <line number="30" hits="0"/>
+              </lines>
+            </method>
+            <method name="setFilterHandler" hits="0" signature="()V">
+              <lines>
+                <line number="42" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="false"/>
+            <line number="11" hits="0" branch="false"/>
+            <line number="12" hits="0" branch="false"/>
+            <line number="14" hits="0" branch="false"/>
+            <line number="15" hits="0" branch="true" condition-coverage="0% (0/2)"/>
+            <line number="16" hits="0" branch="false"/>
+            <line number="18" hits="0" branch="false"/>
+            <line number="22" hits="0" branch="false"/>
+            <line number="26" hits="0" branch="false"/>
+            <line number="30" hits="0" branch="false"/>
+            <line number="31" hits="0" branch="false"/>
+            <line number="39" hits="0" branch="false"/>
+            <line number="43" hits="0" branch="false"/>
+            <line number="46" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="main.jsx" filename="src/main.jsx" line-rate="0" branch-rate="1">
+          <methods>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="01 Starting Project 2.src.components" line-rate="0" branch-rate="0">
+      <classes>
+        <class name="Filter.jsx" filename="src/components/Filter.jsx" line-rate="0" branch-rate="1">
+          <methods>
+            <method name="Filter" hits="0" signature="()V">
+              <lines>
+                <line number="1" hits="0"/>
+              </lines>
+            </method>
+            <method name="filterChangeHandler" hits="0" signature="()V">
+              <lines>
+                <line number="2" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="3" hits="0" branch="false"/>
+            <line number="6" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="Header.jsx" filename="src/components/Header.jsx" line-rate="0" branch-rate="1">
+          <methods>
+            <method name="Header" hits="0" signature="()V">
+              <lines>
+                <line number="5" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="Modal.jsx" filename="src/components/Modal.jsx" line-rate="0" branch-rate="1">
+          <methods>
+            <method name="Modal" hits="0" signature="()V">
+              <lines>
+                <line number="3" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="NewTask.jsx" filename="src/components/NewTask.jsx" line-rate="0" branch-rate="0">
+          <methods>
+            <method name="NewTask" hits="0" signature="()V">
+              <lines>
+                <line number="5" hits="0"/>
+              </lines>
+            </method>
+            <method name="submitHandler" hits="0" signature="()V">
+              <lines>
+                <line number="12" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="false"/>
+            <line number="7" hits="0" branch="false"/>
+            <line number="8" hits="0" branch="false"/>
+            <line number="10" hits="0" branch="false"/>
+            <line number="13" hits="0" branch="false"/>
+            <line number="15" hits="0" branch="false"/>
+            <line number="16" hits="0" branch="false"/>
+            <line number="17" hits="0" branch="false"/>
+            <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)"/>
+            <line number="23" hits="0" branch="false"/>
+            <line number="24" hits="0" branch="false"/>
+            <line number="27" hits="0" branch="false"/>
+            <line number="32" hits="0" branch="false"/>
+            <line number="35" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="Task.jsx" filename="src/components/Task.jsx" line-rate="0" branch-rate="1">
+          <methods>
+            <method name="Task" hits="0" signature="()V">
+              <lines>
+                <line number="10" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="3" hits="0" branch="false"/>
+            <line number="11" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="TaskControl.jsx" filename="src/components/TaskControl.jsx" line-rate="0" branch-rate="1">
+          <methods>
+            <method name="TaskControl" hits="0" signature="()V">
+              <lines>
+                <line number="5" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="TaskList.jsx" filename="src/components/TaskList.jsx" line-rate="0" branch-rate="0">
+          <methods>
+            <method name="TaskList" hits="0" signature="()V">
+              <lines>
+                <line number="4" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_1)" hits="0" signature="()V">
+              <lines>
+                <line number="11" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="true" condition-coverage="0% (0/4)"/>
+            <line number="6" hits="0" branch="false"/>
+            <line number="9" hits="0" branch="false"/>
+            <line number="12" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="Welcome.jsx" filename="src/components/Welcome.jsx" line-rate="0" branch-rate="1">
+          <methods>
+            <method name="Welcome" hits="0" signature="()V">
+              <lines>
+                <line number="1" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="2" hits="0" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

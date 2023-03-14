@@ -1,0 +1,21 @@
+
+{
+	"check-coverage": true,
+	"all": true,
+	"extension": [
+		".js",
+		".jsx",
+		".ts",
+		".tsx"
+	],
+	"include": [
+		"src/**/!(*.test.*).[tj]s?(x)"
+	],
+	"reporter": [
+		"html",
+		"lcov",
+		"text",
+		"text-summary"
+	],
+	"report-dir": "docs/reports/coverage"
+}
