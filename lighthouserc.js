@@ -2,6 +2,9 @@
 module.exports = {
     "ci": {
       "preset": "lighthouse:recommended",
+      "upload": {
+        "target": "temporary-public-storage",
+      },
       "collect": {
         "chromePath": false,
         "numberOfRuns": 1,
