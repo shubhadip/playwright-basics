@@ -11,7 +11,7 @@ module.exports = {
         "settings": {
           "chromeFlags": "--no-sandbox --headless"
         },
-        "url": ["http://localhost:5173","http://localhost:5173/about",]
+        // "url": ["http://localhost:5173","http://localhost:5173/about",]
       },
       "assert": {
         "assertions": {
