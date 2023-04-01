@@ -1,0 +1,8 @@
+name: "Code coverage file"
+on: workflow_dispatch
+jobs:
+  "firstjob":
+      runs-on: ubuntu-latest
+      steps:
+        - name: "print greeting"
+          run: echo "Done Bye"

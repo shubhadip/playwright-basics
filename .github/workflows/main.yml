@@ -1,15 +1,15 @@
 name: CI
 on:
   workflow_dispatch: null
-  push:
-    branches-ignore:
-      - main
-  pull_request:
-    branches-ignore:
-      - main
-  issue_comment:
-    branches:
-      - '*'
+  # push:
+  #   branches-ignore:
+  #     - main
+  # pull_request:
+  #   branches-ignore:
+  #     - main
+  # issue_comment:
+  #   branches:
+  #     - '*'
 jobs:
   build:
     runs-on: ubuntu-20.04
