@@ -6,5 +6,9 @@ jobs:
       steps:
         - name: "print greeting"
           run: echo "welcome"
+        - name: "multi input"
+          run: |
+            echo "welcome"
+            echo "welcome 2"
         - name: "print bye bye"
           run: echo "Done Bye"
