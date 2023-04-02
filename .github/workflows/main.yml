@@ -27,7 +27,7 @@ jobs:
         path: ~/.npm
         key: deps-node-modules-${{ hashFiles('package-lock.json') }}
     - name: env vars
-      run : echo "$PORT - ${{ env.PORT}}"
+      run : echo "$PORT - ${{ env.PORT}} - ${{secrets.TESTING_SECRET}}"
     - name: npm install
       run: npm ci
     - name: Install the browsers
