@@ -10,8 +10,8 @@ on:
   # issue_comment:
   #   branches:
   #     - '*'
-  env:
-    PORT: 8080
+env:
+  PORT: 8080
 jobs:
   build:
     runs-on: ubuntu-20.04
