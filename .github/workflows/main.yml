@@ -10,6 +10,8 @@ on:
   # issue_comment:
   #   branches:
   #     - '*'
+  env:
+    PORT: 8080
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -24,6 +26,8 @@ jobs:
       with:
         path: ~/.npm
         key: deps-node-modules-${{ hashFiles('package-lock.json') }}
+    - name: env vars
+      run : echo "${{ env.PORT}}"
     - name: npm install
       run: npm ci
     - name: Install the browsers
