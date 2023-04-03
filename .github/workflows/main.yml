@@ -21,22 +21,40 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
+    
     - name: Cache dependencies
       uses: actions/cache@v3
       with:
         path: ~/.npm
-        key: deps-node-modules-${{ hashFiles('package-lock.json') }}
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+    
     - name: env vars
       run : echo "$PORT - ${{ env.PORT}} - ${{secrets.TESTING_SECRET}}"
-    - name: npm install
+    
+    - name: Install Dependencies
       run: npm ci
-    - name: Install the browsers
-      run: npx playwright install
-    - name: Install the operating-system dependencies
-      run: npx playwright install-deps
+    
+    - name: Store Playwright's Version
+      run: |
+        PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
+        echo "Playwright's Version: $PLAYWRIGHT_VERSION"
+        echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+    
+    - name: Cache Playwright Browsers for Playwright's Version
+      id: cache-playwright-browsers
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
+    
+    - name: Setup Playwright
+      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
+      run: npx playwright install --with-deps
+    
     - name: Run end-to-end tests
       run: npm run coverage
     - run: npx nyc report --reporter=lcovonly
+    
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
   lhci:
