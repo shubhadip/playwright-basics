@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { test, expect } = require('playwright-test-coverage');
+const { test, expect } = require('@playwright/test');
 
 test.describe.skip("user interaction test cases", () => {
     test.beforeEach(async ({page}) => {

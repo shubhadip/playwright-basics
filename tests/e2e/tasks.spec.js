@@ -1,5 +1,5 @@
 // @ts-check
-const { test,expect } = require('playwright-test-coverage');
+const { test,expect } = require('@playwright/test');
 
 test.describe("basic page", () => {
     test("should render homepage ", async ({page}) => {
