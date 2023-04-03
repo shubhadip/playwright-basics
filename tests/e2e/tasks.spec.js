@@ -1,11 +1,12 @@
 // @ts-check
-const { test,expect } = require('playwright-test-coverage');
+const { test,expect } = require('@playwright/test');
 
 test.describe("basic page", () => {
     test("should render homepage ", async ({page}) => {
         await page.goto('http://localhost:5173');
         const locator = page.locator('main-header img');
         await expect(locator).toBeTruthy()
+        await expect(locator).not.toBeFalsy()
     });
 
     test("it should display page title", async ({page}) => {

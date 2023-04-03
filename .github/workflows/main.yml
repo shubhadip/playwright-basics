@@ -1,31 +1,76 @@
 name: CI
 on:
   workflow_dispatch: null
-  push:
-    branches-ignore:
-      - main
-  pull_request:
-    branches-ignore:
-      - main
-  issue_comment:
-    branches:
-      - '*'
+  # push:
+  #   branches-ignore:
+  #     - main
+  # pull_request:
+  #   branches-ignore:
+  #     - main
+  # issue_comment:
+  #   branches:
+  #     - '*'
+env:
+  PORT: 8080
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 18
-    - run: npm ci
-    - name: Install the browsers
-      run: npx playwright install
-    - name: Install the operating-system dependencies
-      run: npx playwright install-deps
+        node-version: 18.x
+    
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+    
+    - name: env vars
+      run : echo "$PORT - ${{ env.PORT}} - ${{secrets.TESTING_SECRET}}"
+    
+    - name: Install Dependencies
+      run: npm ci
+    
+    - name: Store Playwright's Version
+      run: |
+        PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
+        echo "Playwright's Version: $PLAYWRIGHT_VERSION"
+        echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+    
+    - name: Cache Playwright Browsers for Playwright's Version
+      id: cache-playwright-browsers
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
+    
+    - name: Setup Playwright
+      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
+      run: npx playwright install --with-deps
+    
     - name: Run end-to-end tests
       run: npm run coverage
     - run: npx nyc report --reporter=lcovonly
+    
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
+  lhci:
+    name: Lighthouse 
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Install Dependencies & Build Project
+        run: |
+          npm ci
+          npm run build
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.11.x
+          lhci autorun
